@@ -103,6 +103,15 @@ namespace ProyectoAdsi.Controllers
                 return View();
             }
         }
+        public ActionResult Details(int id)
+        {
+            using (var db = new inventario2021Entities()) 
+            {
+                usuario user = db.usuario.Find(id);
+                return View();
+            }
+        }
+
     }
 }
 
