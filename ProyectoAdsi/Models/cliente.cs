@@ -14,6 +14,10 @@ namespace ProyectoAdsi.Models
     
     public partial class cliente
     {
+        internal string password;
+        internal object apellido;
+        internal object fecha_nacimiento;
+
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public cliente()
         {
