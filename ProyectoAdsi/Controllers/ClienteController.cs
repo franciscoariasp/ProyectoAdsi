@@ -104,5 +104,15 @@ namespace ProyectoAdsi.Controllers
                 return View();
             }
         }
+     
+        public ActionResult Details(int id)
+        {
+            using (var db = new inventario2021Entities())
+            {
+                cliente user = db.cliente.Find(id);
+                return View();
+                }
+        }
     }
+
 }
