@@ -58,47 +58,5 @@ namespace ProyectoAdsi.Controllers
             }
             return sb.ToString();
         }
-        public ActionResult Edit(int id)
-        {
-            try
-            {
-                using (var db = new inventario2021Entities())
-                {
-                    usuario findUser = db.usuario.Where(a => a.id == id).FirstOrDefault();
-                    return View(findUser);
-                }
-            }
-            catch (Exception ex)
-            {
-                ModelState.AddModelError("", "error" + ex);
-                return View();
-            }
-        }
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Edit(proveedor proveedorEdit)
-        {
-            try
-            {
-                using (var db = new inventario2021Entities())
-                {
-                    proveedor user = db.proveedor.Find(proveedorEdit.id);
-
-                    user.nombre = proveedorEdit.nombre;
-                    user.apellido = proveedorEdit.apellido;
-                    user.email = proveedorEdit.email;
-                    user.fecha_nacimiento = proveedorEdit.fecha_nacimiento;
-                    user.password = proveedorEdit.password;
-
-                    db.SaveChanges();
-                    return RedirectToAction("Index");
-                }
-            }
-            catch (Exception ex)
-            {
-                ModelState.AddModelError("", "error" + ex);
-                return View();
-            }
-        }
     }
 }
