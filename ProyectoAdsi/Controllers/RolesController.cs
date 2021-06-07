@@ -61,5 +61,47 @@ namespace ProyectoAdsi.Controllers
             }
             return sb.ToString();
         }
+        public ActionResult Edit(int id)
+        {
+            try
+            {
+                using (var db = new inventario2021Entities())
+                {
+                    roles findUser = db.roles.Where(a => a.id == id).FirstOrDefault();
+                    return View(findUser);
+                }
+            }
+            catch (Exception ex)
+            {
+                ModelState.AddModelError("", "error" + ex);
+                return View();
+            }
+        }
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Edit(roles rolesEdit)
+        {
+            try
+            {
+                using (var db = new inventario2021Entities())
+                {
+                    roles  user = db.roles.Find(rolesEdit.id);
+
+                    user.nombre = rolesEdit.nombre;
+                    user.apellido = rolesEdit.apellido;
+                    user.email = rolesEdit.email;
+                    user.fecha_nacimiento = rolesEdit.fecha_nacimiento;
+                    user.password = rolesEdit.password;
+
+                    db.SaveChanges();
+                    return RedirectToAction("Index");
+                }
+            }
+            catch (Exception ex)
+            {
+                ModelState.AddModelError("", "error" + ex);
+                return View();
+            }
+        }
     }
 }
