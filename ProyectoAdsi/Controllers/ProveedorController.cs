@@ -65,7 +65,7 @@ namespace ProyectoAdsi.Controllers
             {
                 using (var db = new inventario2021Entities())
                 {
-                    usuario findUser = db.usuario.Where(a => a.id == id).FirstOrDefault();
+                    proveedor findUser = db.proveedor.Where(a => a.id == id).FirstOrDefault();
                     return View(findUser);
                 }
             }

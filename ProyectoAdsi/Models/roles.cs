@@ -14,12 +14,6 @@ namespace ProyectoAdsi.Models
     
     public partial class roles
     {
-        internal string password;
-        internal object nombre;
-        internal object apellido;
-        internal object email;
-        internal object fecha_nacimiento;
-
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public roles()
         {
