@@ -89,10 +89,9 @@ namespace ProyectoAdsi.Controllers
                     cliente user = db.cliente.Find(clienteEdit.id);
 
                     user.nombre = clienteEdit.nombre;
-                    user.apellido = clienteEdit.apellido;
+                    user.documento = clienteEdit.documento;
                     user.email = clienteEdit.email;
-                    user.fecha_nacimiento = clienteEdit.fecha_nacimiento;
-                    user.password = clienteEdit.password;
+                   
 
                     db.SaveChanges();
                     return RedirectToAction("Index");
@@ -110,7 +109,7 @@ namespace ProyectoAdsi.Controllers
             using (var db = new inventario2021Entities())
             {
                 cliente user = db.cliente.Find(id);
-                return View();
+                return View(user);
                 }
         }
 

@@ -86,10 +86,10 @@ namespace ProyectoAdsi.Controllers
                     proveedor user = db.proveedor.Find(proveedorEdit.id);
 
                     user.nombre = proveedorEdit.nombre;
-                    user.apellido = proveedorEdit.apellido;
-                    user.email = proveedorEdit.email;
-                    user.fecha_nacimiento = proveedorEdit.fecha_nacimiento;
-                    user.password = proveedorEdit.password;
+                    user.direccion = proveedorEdit.direccion;
+                    user.telefono = proveedorEdit.telefono;
+                    user.nombre_contacto = proveedorEdit.nombre_contacto;
+                    
 
                     db.SaveChanges();
                     return RedirectToAction("Index");
@@ -106,7 +106,7 @@ namespace ProyectoAdsi.Controllers
             using (var db = new inventario2021Entities())
             {
                 proveedor user = db.proveedor.Find(id);
-                return View();
+                return View(user);
             }
         }
         public ActionResult Delete(int id)

@@ -14,11 +14,6 @@ namespace ProyectoAdsi.Models
     
     public partial class proveedor
     {
-        internal object apellido;
-        internal object email;
-        internal object fecha_nacimiento;
-        internal object password;
-
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public proveedor()
         {

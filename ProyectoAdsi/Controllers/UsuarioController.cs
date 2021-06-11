@@ -90,8 +90,8 @@ namespace ProyectoAdsi.Controllers
 
                     user.nombre = usuarioEdit.nombre;
                     user.apellido = usuarioEdit.apellido;
-                    user.email = usuarioEdit.email;
                     user.fecha_nacimiento = usuarioEdit.fecha_nacimiento;
+                    user.email = usuarioEdit.email;
                     user.password = usuarioEdit.password;
 
                     db.SaveChanges();
@@ -108,7 +108,7 @@ namespace ProyectoAdsi.Controllers
             using (var db = new inventario2021Entities()) 
             {
                 usuario user = db.usuario.Find(id);
-                return View();
+                return View(user);
             }
         }
         public ActionResult Delete(int id)
