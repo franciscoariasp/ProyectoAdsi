@@ -88,8 +88,8 @@ namespace ProyectoAdsi.Controllers
             }
         }
 
-        public ActionResult Edit (int id)
-           
+        public ActionResult Edit(int id)
+
         {
             try
             {
@@ -99,13 +99,41 @@ namespace ProyectoAdsi.Controllers
                     return View(producto);
                 }
             }
-            catch (Exception ex) 
+            catch (Exception ex)
             {
                 ModelState.AddModelError("", "error" + ex);
                 return View();
             }
         }
-    }
-}
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+
+        public ActionResult Edit(producto productoEdit)
+        {
+
+            try
+            {
+                using (var db = new inventario2021Entities())
+                {
+                    var producto = db.producto.Find(productoEdit.id);
+                    producto.nombre = productoEdit.nombre;
+                    producto.percio_unitario = productoEdit.percio_unitario;
+                    producto.cantidad = productoEdit.cantidad;
+                    producto.descripcion = productoEdit.descripcion;
+                    producto.id_proveedor = productoEdit.id_proveedor;
+                    db.SaveChanges();
+                    return View("Index");
+                }
+            }
+            catch (Exception ex)
+            {
+                ModelState.AddModelError("", "error" + ex);
+                return View();
+            }
+          }
+        }
+     }
+
     
 

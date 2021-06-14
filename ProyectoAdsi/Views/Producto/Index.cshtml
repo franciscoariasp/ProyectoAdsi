@@ -50,7 +50,7 @@
             <td>
                 @Html.ActionLink("Editar", "Edit", new { id = item.id }) |
                 @Html.ActionLink("Detalles", "Details", new { id = item.id }) |
-                @Html.ActionLink("Eliminar", "Delete", new { id = item.id },new {@class="LinkDelette" })
+                @Html.ActionLink("Eliminar", "Delete", new { id = item.id },new {@class="linkEliminar" })
             </td>
         </tr>
     }
@@ -58,10 +58,11 @@
 </table>
 
 @section scripts{
+
     <script>
-        $(".LinkDelete").click(function (event) {
-            if(!confirm('¿Esta seguro de eliminar?')) {
-            event.preventDefault();
+        $(".linkEliminar").click(function (event) {
+            if(!confirm('¿Esta seguro de Eliminar?')) {
+               event.preventDefault();
          }
       })
     </script>
