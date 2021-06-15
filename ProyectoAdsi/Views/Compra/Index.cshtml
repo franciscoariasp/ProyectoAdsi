@@ -1,10 +1,10 @@
-﻿@model IEnumerable<ProyectoAdsi.Models.usuario>
+﻿@model IEnumerable<ProyectoAdsi.Models.compra>
 
 @{
     ViewBag.Title = "Index";
 }
 
-<h2>Usuario</h2>
+<h2>Compra</h2>
 
 <p>
     @Html.ActionLink("Crear Nuevo", "Create")
@@ -12,19 +12,16 @@
 <table class="table">
     <tr>
         <th>
-            @Html.DisplayNameFor(model => model.nombre)
+            @Html.DisplayNameFor(model => model.fecha)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.apellido)
+            @Html.DisplayNameFor(model => model.total)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.fecha_nacimiento)
+            @Html.DisplayNameFor(model => model.id_usuario)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.email)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.password)
+            @Html.DisplayNameFor(model => model.id_cliente)
         </th>
         <th></th>
     </tr>
@@ -33,26 +30,22 @@
     {
         <tr>
             <td>
-                @Html.DisplayFor(modelItem => item.nombre)
+                @Html.DisplayFor(modelItem => item.fecha)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.apellido)
+                @Html.DisplayFor(modelItem => item.total)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.fecha_nacimiento)
+                @Html.DisplayFor(modelItem => item.id_usuario)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.email)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.password)
+                @Html.DisplayFor(modelItem => item.id_cliente)
             </td>
             <td>
                 @Html.ActionLink("Editar", "Edit", new { id = item.id }) |
                 @Html.ActionLink("Detalles", "Details", new { id = item.id }) |
-                @Html.ActionLink("Eliminar", "Delete", new { id = item.id }, new { @class = "linkEliminar" })
+                @Html.ActionLink("Eliminar", "Delete", new { id = item.id },new { @class = "linkEliminar" })
             </td>
-           
         </tr>
     }
 

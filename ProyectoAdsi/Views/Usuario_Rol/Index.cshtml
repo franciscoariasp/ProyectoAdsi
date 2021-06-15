@@ -1,18 +1,21 @@
-﻿@model IEnumerable<ProyectoAdsi.Models.roles>
+﻿@model IEnumerable<ProyectoAdsi.Models.usuariorol>
 
 @{
     ViewBag.Title = "Index";
 }
 
-<h2>Roles</h2>
+<h2>Usuario_Rol</h2>
 
 <p>
-    @Html.ActionLink("Crer Nuevo", "Create")
+    @Html.ActionLink("Create New", "Create")
 </p>
 <table class="table">
     <tr>
         <th>
-            @Html.DisplayNameFor(model => model.descripcion)
+            @Html.DisplayNameFor(model => model.idUsuario)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.idRol)
         </th>
         <th></th>
     </tr>
@@ -21,12 +24,15 @@
     {
         <tr>
             <td>
-                @Html.DisplayFor(modelItem => item.descripcion)
+                @Html.DisplayFor(modelItem => item.idUsuario)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.idRol)
             </td>
             <td>
                 @Html.ActionLink("Editar", "Edit", new { id = item.id }) |
                 @Html.ActionLink("Detalles", "Details", new { id = item.id }) |
-                @Html.ActionLink("Eliminar", "Delete", new { id = item.id }, new { @class = "linkEliminar" }))
+                @Html.ActionLink("Eliminar", "Delete", new { id = item.id }, new { @class = "linkEliminar" })
             </td>
         </tr>
     }

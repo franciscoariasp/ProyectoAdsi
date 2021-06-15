@@ -1,10 +1,11 @@
-﻿@model IEnumerable<ProyectoAdsi.Models.producto>
+﻿@model IEnumerable<ProyectoAdsi.Models.producto_compra>
 
 @{
     ViewBag.Title = "Index";
+
 }
 
-<h2>Producto</h2>
+<h2>Producto_Compra</h2>
 
 <p>
     @Html.ActionLink("Crear Nuevo", "Create")
@@ -12,20 +13,16 @@
 <table class="table">
     <tr>
         <th>
-            @Html.DisplayNameFor(model => model.nombre)
+           ID_Compra
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.percio_unitario)
+            ID_Producto
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.descripcion)
+            Cantidad
+
         </th>
-        <th>
-            @Html.DisplayNameFor(model => model.cantidad)
-        </th>
-        <th>
-            Proveedor
-        </th>
+       
         <th></th>
     </tr>
 
@@ -33,24 +30,18 @@
     {
         <tr>
             <td>
-                @Html.DisplayFor(modelItem => item.nombre)
+                @Html.DisplayFor(modelItem => item.id_compra)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.percio_unitario)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.descripcion)
+                @Html.DisplayFor(modelItem => item.id_producto)
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.cantidad)
             </td>
             <td>
-                @ProyectoAdsi.Controllers.ProductoController.NombreProveedor(item.id_proveedor)
-            </td>
-            <td>
                 @Html.ActionLink("Editar", "Edit", new { id = item.id }) |
                 @Html.ActionLink("Detalles", "Details", new { id = item.id }) |
-                @Html.ActionLink("Eliminar", "Delete", new { id = item.id },new {@class="linkEliminar" })
+                @Html.ActionLink("Eliminar", "Delete", new { id = item.id }, new {@class="linkEliminar" })
             </td>
         </tr>
     }
