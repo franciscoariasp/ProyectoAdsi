@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
-using ProyectoAdsi.Models,
+using ProyectoAdsi.Models;
 
 namespace ProyectoAdsi.Controllers
 {

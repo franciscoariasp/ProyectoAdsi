@@ -1,0 +1,8 @@
+﻿@model ProyectoAdsi.Models.usuariorol
+<select class="form-control" id="id_role" name="id_role">
+    @foreach (var item in Model)
+    {
+        <option value="@item.id">@item.descripcion</option>
+    }
+</select>
+

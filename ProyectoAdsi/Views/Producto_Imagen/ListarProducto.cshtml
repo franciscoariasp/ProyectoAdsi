@@ -1,0 +1,9 @@
+﻿@model ProyectoAdsi.Models.producto_imagen
+
+<select class="form-control" id="id_producto" name="id_producto">
+    @foreach (var item in Model)
+    {
+        <option value="@item.id">@item.nombre</option>
+    }
+</select>
+
