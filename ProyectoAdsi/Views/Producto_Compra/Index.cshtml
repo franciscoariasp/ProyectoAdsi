@@ -2,7 +2,7 @@
 
 @{
     ViewBag.Title = "Index";
-    Layout = "~/Views/Shared/_Layout.cshtml";
+    
 
 }
 
@@ -14,7 +14,7 @@
 <table class="table">
     <tr>
         <th>
-            Id Compra
+            Compra
         </th>
         <th>
              Producto
@@ -31,10 +31,10 @@
     {
         <tr>
             <td>
-                @Html.DisplayFor(modelItem => item.id_compra)
+                @ProyectoAdsi.Controllers.Producto_CompraController.NombreCompra(item.id_compra)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.id_producto)
+                @ProyectoAdsi.Controllers.Producto_CompraController.NombreProducto(item.id_producto)
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.cantidad)

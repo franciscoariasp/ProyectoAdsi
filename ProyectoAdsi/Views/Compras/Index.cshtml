@@ -7,7 +7,7 @@
 <h2>Lista Compras</h2>
 
 <p>
-    @Html.ActionLink("Crear Nuevo", "Create")
+    @Html.ActionLink("Registrar Nueva Compra", "Create")
 </p>
 <table class="table">
     <tr>
@@ -36,10 +36,10 @@
                 @Html.DisplayFor(modelItem => item.total)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.id_usuario)
+                @ProyectoAdsi.Controllers.ComprasController.NombreUsuario(item.id_usuario)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.id_cliente)
+                @ProyectoAdsi.Controllers.ComprasController.NombreCliente(item.id_cliente)
             </td>
             <td>
                 @Html.ActionLink("Editar", "Edit", new { id = item.id }) |

@@ -5,7 +5,7 @@
     ViewBag.Title = "Create";
 }
 
-<h2>Registrar Productos_Compra</h2>
+<h2>Registrar Productos</h2>
 <p> En este formulario ingrese los productos comprados.</p>
 
 @using (Html.BeginForm())
@@ -19,7 +19,7 @@
         <div class="form-group">
             <label class="control-label col-md-2" for="id_compra">Comprador</label>
             <div class="col-md-10">
-                @Html.Action("ListarCompra")
+                @Html.Action("ListarCompras")
                 @Html.ValidationMessageFor(model => model.id_compra, "", new { @class = "text-danger" })
             </div>
         </div>

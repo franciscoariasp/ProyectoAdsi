@@ -4,7 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using ProyectoAdsi.Models;
-using Rotativa;
+
 
 namespace ProyectoAdsi.Controllers
 {
@@ -29,7 +29,7 @@ namespace ProyectoAdsi.Controllers
         }
     }
 
-    public ActionResult ListarCompra()
+    public ActionResult ListarCompras()
     {
         using (var db = new inventario2021Entities())
 
@@ -39,11 +39,11 @@ namespace ProyectoAdsi.Controllers
         }
     }
 
-    public static int NombreProducto(int idProducto)
+    public static string NombreProducto(int idProducto)
     {
         using (var db = new inventario2021Entities())
         {
-            return db.compra.Find(idProducto).id_cliente;
+                return db.producto.Find(idProducto).nombre;
         }
     }
 
@@ -166,33 +166,6 @@ namespace ProyectoAdsi.Controllers
          }
 
         }
-
-
-        public ActionResult Reporte()
-        {
-
-            try
-            {
-                var db = new inventario2021Entities();
-                var query = from tabProveedor in db.proveedor
-                            join tabProducto in db.producto on tabProveedor.id equals tabProducto.id
-                            select new Reporte
-                            {
-                                nombreProveedor = tabProveedor.nombre,
-                                telefonoProveedor = tabProveedor.telefono,
-                                direccionProveedor = tabProveedor.direccion,
-                                nombreProducto = tabProducto.nombre,
-                                precioProducto = tabProducto.percio_unitario,
-                            };
-
-                return View(query);
-
-            }
-            
-            public ActionResult ImprimirReporte()
-        
-            {
-                return new ActionAsPdf("Reporte") { FileName = "reporte.pdf" };
-        }
     }
 }
+

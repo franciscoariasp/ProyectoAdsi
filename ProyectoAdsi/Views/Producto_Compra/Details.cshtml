@@ -2,7 +2,7 @@
 
 @{
     ViewBag.Title = "Details";
-    Layout = "~/Views/Shared/_Layout.cshtml";
+   
 }
 
 <h2>Detalles</h2>
@@ -12,23 +12,23 @@
     <hr />
     <dl class="dl-horizontal">
         <dt>
-            Id Compra
+            Compra
         </dt>
 
         <dd>
-            @Html.Action("ListarCompras")
+            @ProyectoAdsi.Controllers.Producto_CompraController.NombreCompra(Model.id_compra)
         </dd>
 
         <dt>
-            Id Producto
+            Producto
         </dt>
 
         <dd>
-            @Html.Action("ListarProductos")
+            @ProyectoAdsi.Controllers.Producto_CompraController.NombreProducto(Model.id_producto)
         </dd>
 
         <dt>
-            Cantidad
+            @Html.DisplayNameFor(model => model.cantidad)
         </dt>
 
         <dd>
