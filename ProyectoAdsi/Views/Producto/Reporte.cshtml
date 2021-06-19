@@ -1,7 +1,8 @@
-﻿@model IEnumerable<ProyectoAdsi.Models.Reporte>
+﻿@model IEnumerable<ProyectoAdsi.Models.producto>
 
 @{
     ViewBag.Title = "Reporte";
+    Layout = "~/View/Shared/_Layout.cshtml";
 }
 
 <h2>Reporte</h2>
@@ -29,4 +30,4 @@
 
 </table>
 
-
+@Html.ActionLink("Generar Reporte", "Imprimir Reporte", "Producto");

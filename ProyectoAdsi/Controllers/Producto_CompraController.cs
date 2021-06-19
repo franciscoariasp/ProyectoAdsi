@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using ProyectoAdsi.Models;
+using Rotativa;
 
 namespace ProyectoAdsi.Controllers
 {
@@ -166,5 +167,32 @@ namespace ProyectoAdsi.Controllers
 
         }
 
+
+        public ActionResult Reporte()
+        {
+
+            try
+            {
+                var db = new inventario2021Entities();
+                var query = from tabProveedor in db.proveedor
+                            join tabProducto in db.producto on tabProveedor.id equals tabProducto.id
+                            select new Reporte
+                            {
+                                nombreProveedor = tabProveedor.nombre,
+                                telefonoProveedor = tabProveedor.telefono,
+                                direccionProveedor = tabProveedor.direccion,
+                                nombreProducto = tabProducto.nombre,
+                                precioProducto = tabProducto.percio_unitario,
+                            };
+
+                return View(query);
+
+            }
+            
+            public ActionResult ImprimirReporte()
+        
+            {
+                return new ActionAsPdf("Reporte") { FileName = "reporte.pdf" };
+        }
     }
 }

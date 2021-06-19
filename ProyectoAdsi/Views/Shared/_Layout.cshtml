@@ -10,36 +10,57 @@
 </head>
 <body>
     <div class="navbar navbar-inverse navbar-fixed-top">
+        <div clss="container">
             <div class="navbar-header">
-             @Html.ActionLink("Nombre de la aplicación","Index","Home",new { area = "" },new { @class = "navbar-brand" })
-             </div>
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                @Html.ActionLink("Nombre de la aplicación", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+            </div>
+            <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
-                <li>@Html.ActionLink("Inicio","Index","Home")</li>
-                <li>@Html.ActionLink("Sobre MI","About","Home")</li>
-                <li>@Html.ActionLink("Contacto","Contact","Home")</li>
-                <li>@Html.ActionLink("Cliente","","Cliente")</li>
-                <li>@Html.ActionLink("Proveedor","","Proveedor")</li>
-                <li>@Html.ActionLink("Usuario_Rol","","Usuario_Rol")</li>
-                <li>@Html.ActionLink("Producto","","Producto")</li>
-                <li>@Html.ActionLink("Compra","","Compra")</li>
-                <li>@Html.ActionLink("Producto_Compra","","Producto_Compra")</li>
-                <li>@Html.ActionLink("Producto_Imagen","","Producto_Imagen")</li>
-                <li>@Html.ActionLink("Roles","","Roles")</li>
+                    <li>@Html.ActionLink("Inicio", "Index", "Home")</li>
+                    <li>@Html.ActionLink("Sobre MI", "About", "Home")</li>
+                    <li>@Html.ActionLink("Contacto", "Contact", "Home")</li>
+                    <li>@Html.ActionLink("Iniciar Sesion", "Login", "Usuario")</li>
+                    <li>@Html.ActionLink("Salir", "CloseSession", "Usuario")</li>
                     @if (User.Identity.IsAuthenticated)
                     {
-                <li>@Html.ActionLink("Usuario","Index","Usuario")</li>
-                <li>@Html.ActionLink("Salir","CloseSession","Usuario")</li>
+                       <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle active" data-toggle="dropdown" data-target="despegable" href="#">
+
+                                Menu Tablas
+
+                            </a>
+                            <div class="dropdown-menu">
+
+                                <a class="dropdown-item" href="#">@Html.ActionLink("CRUD Usuario", "Index", "Usuario")               </a>
+                                <br />
+                                <a class="dropdown-item" href="#">@Html.ActionLink("CRUD Cliente", "Index", "Cliente")               </a>
+                                <br />
+                                <a class="dropdown-item" href="#">@Html.ActionLink("CRUD Compra", "Index", "Compras")                </a>
+                                <br />
+                                <a class="dropdown-item" href="#">@Html.ActionLink("CRUD Proveedor", "Index", "Proveedor")           </a>
+                                <br />
+                                <a class="dropdown-item" href="#">@Html.ActionLink("CRUD Producto", "Index", "Producto")             </a>
+                                <br />
+                                <a class="dropdown-item" href="#">@Html.ActionLink("CRUD Roles", "Index", "Roles")                   </a>
+                                <br />
+                                <a class="dropdown-item" href="#">@Html.ActionLink("CRUD Producto Compra", "Index", "Producto_Compra")</a>
+                                <br />
+                                <a class="dropdown-item" href="#">@Html.ActionLink("CRUD Producto Imagen", "Index", "Producto_Imagen")</a>
+                                <br />
+                                
+                               
+                            </div>
+                        </li>
+
                     }
-                <li>@Html.ActionLink("Iniciar Sesion", "Login", "Usuario")</li>                
                 </ul>
             </div>
-    
-        <div class="container body-content">
-        @RenderBody()
-        <hr />
-        <footer>
-            <p>&copy; @DateTime.Now.Year - Mi aplicación ASP.NET</p>
-        </footer>
+        </div>
     </div>
 
     @Scripts.Render("~/bundles/jquery")
