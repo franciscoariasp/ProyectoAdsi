@@ -19,11 +19,11 @@ namespace ProyectoAdsi.Controllers
             }
 
         }
-        public static string NombreProducto(int idProducto)
+        public static string NombreProducto(int idNombreProducto)
         {
             using (var db = new inventario2021Entities())
             {
-                return db.producto.Find(idProducto).nombre;
+                return db.producto.Find(idNombreProducto).nombre;
             }
         }
 
@@ -69,8 +69,8 @@ namespace ProyectoAdsi.Controllers
             using (var db = new inventario2021Entities())
 
             {
-                producto_imagen producto_imagenDetalle = db.producto_imagen.Where(a => a.id == id).FirstOrDefault();
-                return View(producto_imagenDetalle);
+                producto_imagen productoImagenDetalle = db.producto_imagen.Where(a => a.id == id).FirstOrDefault();
+                return View(productoImagenDetalle);
             }
 
         }
@@ -80,8 +80,8 @@ namespace ProyectoAdsi.Controllers
 
             using (var db = new inventario2021Entities())
             {
-                var product_imagenDelete = db.producto_imagen.Find(id);
-                db.producto_imagen.Remove(product_imagenDelete);
+                var productoImagenDelete = db.producto_imagen.Find(id);
+                db.producto_imagen.Remove(productoImagenDelete);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
@@ -125,10 +125,9 @@ namespace ProyectoAdsi.Controllers
                 using (var db = new inventario2021Entities())
 
                 {
-                    var producto_imagen = db.producto_imagen.Find(productoImagenEdit.id);
-                    producto_imagen.imagen = productoImagenEdit.imagen;
-                    producto_imagen.id_producto = productoImagenEdit.id_producto;
-
+                    var productoImagen = db.producto_imagen.Find(productoImagenEdit.id);
+                    productoImagen.imagen = productoImagenEdit.imagen;
+                    productoImagen.id_producto = productoImagenEdit.id_producto;
                     db.SaveChanges();
                     return RedirectToAction("Index");
 

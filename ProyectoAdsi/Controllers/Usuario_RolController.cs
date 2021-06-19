@@ -39,11 +39,11 @@ namespace ProyectoAdsi.Controllers
             }
         }
 
-        public static string RolUsuario(int idRole)
+        public static string RolUsuario(int idRol)
         {
             using (var db = new inventario2021Entities())
             {
-                return db.roles.Find(idRole).descripcion;
+                return db.roles.Find(idRol).descripcion;
             }
         }
 

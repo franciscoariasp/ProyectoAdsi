@@ -1,13 +1,8 @@
-﻿@model IEnumerable<ProyectoAdsi.Models.producto_compra>
+﻿@model IEnumerable<ProyectoAdsi.Models.compra>
 
 <select class="form-control" id="id_compra" name="id_compra">
-   
     @foreach (var item in Model)
-
     {
-
-        <option value="@item.id">@item.total</option>
-        
+        <option value="@item.id">@item.id</option>
     }
 </select>
-

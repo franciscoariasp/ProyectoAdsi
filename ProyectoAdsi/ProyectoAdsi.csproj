@@ -180,12 +180,13 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\ClienteController.cs" />
-    <Compile Include="Controllers\CompraController.cs" />
+    <Compile Include="Controllers\ComprasController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ProductoController.cs" />
     <Compile Include="Controllers\Producto_ImagenController.cs" />
     <Compile Include="Controllers\Producto_CompraController.cs" />
     <Compile Include="Controllers\ProveedorController.cs" />
+    <Compile Include="Controllers\Reporte.cs" />
     <Compile Include="Controllers\RolesController.cs" />
     <Compile Include="Controllers\UsuarioController.cs" />
     <Compile Include="Controllers\Usuario_RolController.cs" />
@@ -324,12 +325,12 @@
     <Content Include="Views\Producto_Compra\ListarCompras.cshtml" />
     <Content Include="Views\Producto_Compra\Details.cshtml" />
     <Content Include="Views\Producto_Compra\Edit.cshtml" />
-    <Content Include="Views\Compra\Index.cshtml" />
-    <Content Include="Views\Compra\Details.cshtml" />
-    <Content Include="Views\Compra\ListarCliente.cshtml" />
-    <Content Include="Views\Compra\ListarUsuario.cshtml" />
-    <Content Include="Views\Compra\Edit.cshtml" />
-    <Content Include="Views\Compra\Create.cshtml" />
+    <Content Include="Views\Compras\Index.cshtml" />
+    <Content Include="Views\Compras\Details.cshtml" />
+    <Content Include="Views\Compras\ListarCliente.cshtml" />
+    <Content Include="Views\Compras\ListarUsuario.cshtml" />
+    <Content Include="Views\Compras\Edit.cshtml" />
+    <Content Include="Views\Compras\Create.cshtml" />
     <Content Include="Views\Usuario_Rol\Index.cshtml" />
     <Content Include="Views\Usuario_Rol\Edit.cshtml" />
     <Content Include="Views\Usuario_Rol\Create.cshtml" />
@@ -345,8 +346,10 @@
     <Content Include="Views\Producto\Delete.cshtml" />
     <Content Include="Views\Producto_Imagen\ListarProducto.cshtml" />
     <Content Include="Views\Usuario_Rol\ListarRoles.cshtml" />
-    <Content Include="Views\Usuario_Rol\ListarUsuario.cshtml" />
+    <Content Include="Views\Usuario_Rol\ListarUsuarioRol.cshtml" />
     <Content Include="Views\Usuario\Login.cshtml" />
+    <Content Include="Views\Compras\Delete.cshtml" />
+    <Content Include="Views\Producto\Reporte.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

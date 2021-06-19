@@ -1,5 +1,6 @@
-﻿@model ProyectoAdsi.Models.usuariorol
-<select class="form-control" id="id_role" name="id_role">
+﻿@model IEnumerable<ProyectoAdsi.Models.roles>
+
+<select class="form-control" id="id_rol" name="id_rol">
     @foreach (var item in Model)
     {
         <option value="@item.id">@item.descripcion</option>

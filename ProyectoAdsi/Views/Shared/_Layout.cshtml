@@ -17,7 +17,6 @@
                 <li>@Html.ActionLink("Inicio","Index","Home")</li>
                 <li>@Html.ActionLink("Sobre MI","About","Home")</li>
                 <li>@Html.ActionLink("Contacto","Contact","Home")</li>
-                
                 <li>@Html.ActionLink("Cliente","","Cliente")</li>
                 <li>@Html.ActionLink("Proveedor","","Proveedor")</li>
                 <li>@Html.ActionLink("Usuario_Rol","","Usuario_Rol")</li>
@@ -26,13 +25,12 @@
                 <li>@Html.ActionLink("Producto_Compra","","Producto_Compra")</li>
                 <li>@Html.ActionLink("Producto_Imagen","","Producto_Imagen")</li>
                 <li>@Html.ActionLink("Roles","","Roles")</li>
-                <li>@Html.ActionLink("Iniciar Sesion","Login", "Usuario")</li>
                     @if (User.Identity.IsAuthenticated)
                     {
-                <li>@Html.ActionLink("Usuario", "Index", "Usuario")</li>
-                <li>@Html.ActionLink("Salir", "CloseSession","Usuario")</li>
+                <li>@Html.ActionLink("Usuario","Index","Usuario")</li>
+                <li>@Html.ActionLink("Salir","CloseSession","Usuario")</li>
                     }
-                
+                <li>@Html.ActionLink("Iniciar Sesion", "Login", "Usuario")</li>                
                 </ul>
             </div>
     

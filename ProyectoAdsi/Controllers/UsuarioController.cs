@@ -127,7 +127,6 @@ namespace ProyectoAdsi.Controllers
             }
          }
 
-
         public ActionResult Login(string message = "")
         {
             ViewBag.Message = message;

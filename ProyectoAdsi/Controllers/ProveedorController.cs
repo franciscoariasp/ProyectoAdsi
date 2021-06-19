@@ -102,8 +102,9 @@ namespace ProyectoAdsi.Controllers
         {
             using (var db = new inventario2021Entities())
             {
-                var proveedor = db.proveedor.Find(id);
-                {
+                
+                
+                    var proveedor = db.proveedor.Find(id);
                     db.proveedor.Remove(proveedor);
                     db.SaveChanges();
                     return RedirectToAction("Index");
@@ -112,5 +113,5 @@ namespace ProyectoAdsi.Controllers
             }
         }
     }
-}
+
 

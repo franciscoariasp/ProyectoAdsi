@@ -7,7 +7,7 @@ using ProyectoAdsi.Models;
 
 namespace ProyectoAdsi.Controllers
 {
-    public class CompraController : Controller
+    public class ComprasController : Controller
 {// GET: Compra
     public ActionResult Index()
 

@@ -1,4 +1,4 @@
-﻿@model ProyectoAdsi.Models.producto_compra
+﻿@model ProyectoAdsi.Models.compra
 
 @{
     ViewBag.Title = "Delete";
@@ -6,35 +6,42 @@
 }
 
 <h2>Eliminar</h2>
-<h3>¿ Esta seguro de eliminar ?</h3>
 
-
+<h3>Esta seguro de Eliminar<?</h3>
 <div>
-    <h4>producto_compra</h4>
+    <h4>compra</h4>
     <hr />
     <dl class="dl-horizontal">
         <dt>
-         Id Compra
+            @Html.DisplayNameFor(model => model.fecha)
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.id_compra)
+            @Html.DisplayFor(model => model.fecha)
         </dd>
 
         <dt>
-           Id Producto
+            @Html.DisplayNameFor(model => model.total)
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.id_producto)
+            @Html.DisplayFor(model => model.total)
         </dd>
 
         <dt>
-           Cantidad
+            @Html.DisplayNameFor(model => model.id_usuario)
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.cantidad)
+            @Html.DisplayFor(model => model.id_usuario)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.id_cliente)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.id_cliente)
         </dd>
 
     </dl>

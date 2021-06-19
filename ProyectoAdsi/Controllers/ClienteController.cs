@@ -8,15 +8,18 @@ using ProyectoAdsi.Models;
 
 namespace ProyectoAdsi.Controllers
 {
+
     public class ClienteController : Controller
     {
-        // GET: Usuario
+        // GET: Cliente
         public ActionResult Index()
         {
             using (var db = new inventario2021Entities())
             {
+
                 return View(db.cliente.ToList());
             }
+
         }
 
         public ActionResult Create()
@@ -29,37 +32,25 @@ namespace ProyectoAdsi.Controllers
         public ActionResult Create(cliente cliente)
         {
             if (!ModelState.IsValid)
+
                 return View();
 
             try
             {
-             using (var db = new inventario2021Entities())
+                using (var db = new inventario2021Entities())
                 {
-                    cliente.password = ClienteController.HashSHA1(cliente.password);
                     db.cliente.Add(cliente);
                     db.SaveChanges();
                     return RedirectToAction("Index");
-                }
 
+                }
             }
             catch (Exception ex)
             {
-                ModelState.AddModelError("", "error" + ex);
+                ModelState.AddModelError("", " error " + ex);
                 return View();
             }
-        }
-        public static string HashSHA1(string value)
-        {
-            var sha1 = System.Security.Cryptography.SHA1.Create();
-            var inputBytes = Encoding.ASCII.GetBytes(value);
-            var hash = sha1.ComputeHash(inputBytes);
 
-            var sb = new StringBuilder();
-            for (var i = 0; i < hash.Length; i++)
-            {
-                sb.Append(hash[i].ToString("X2"));
-            }
-            return sb.ToString();
         }
 
         public ActionResult Edit(int id)
@@ -74,10 +65,12 @@ namespace ProyectoAdsi.Controllers
             }
             catch (Exception ex)
             {
-                ModelState.AddModelError("", "error" + ex);
+                ModelState.AddModelError("", "error " + ex);
                 return View();
             }
+
         }
+
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Edit(cliente clienteEdit)
@@ -91,7 +84,6 @@ namespace ProyectoAdsi.Controllers
                     user.nombre = clienteEdit.nombre;
                     user.documento = clienteEdit.documento;
                     user.email = clienteEdit.email;
-                   
 
                     db.SaveChanges();
                     return RedirectToAction("Index");
@@ -99,33 +91,30 @@ namespace ProyectoAdsi.Controllers
             }
             catch (Exception ex)
             {
-                ModelState.AddModelError("", "error" + ex);
+                ModelState.AddModelError("", "error " + ex);
                 return View();
             }
         }
-     
+
         public ActionResult Details(int id)
         {
             using (var db = new inventario2021Entities())
             {
                 cliente user = db.cliente.Find(id);
                 return View(user);
-                }
+            }
         }
-
 
         public ActionResult Delete(int id)
         {
             using (var db = new inventario2021Entities())
             {
                 var cliente = db.cliente.Find(id);
-                {
-                    db.cliente.Remove(cliente);
-                    db.SaveChanges();
-                    return RedirectToAction("Index");
-                }
-
+                db.cliente.Remove(cliente);
+                db.SaveChanges();
+                return RedirectToAction("Index");
             }
         }
+
     }
 }

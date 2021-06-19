@@ -2,6 +2,7 @@
 
 @{
     ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
 <h2>Usuario_Rol</h2>
@@ -12,10 +13,10 @@
 <table class="table">
     <tr>
         <th>
-            Usuario
+            @Html.DisplayNameFor(model => model.idUsuario)
         </th>
         <th>
-            Rol
+            @Html.DisplayNameFor(model => model.idRol)
         </th>
         <th></th>
     </tr>

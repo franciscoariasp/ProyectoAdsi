@@ -2,6 +2,7 @@
 
 @{
     ViewBag.Title = "Details";
+    var nombreClienteCompra = Model.id_cliente;
 }
 
 <h2>Detalles</h2>
@@ -11,7 +12,7 @@
     <hr />
     <dl class="dl-horizontal">
         <dt>
-            @Html.DisplayNameFor(model => model.fecha)
+            Fecha
         </dt>
 
         <dd>
@@ -19,7 +20,7 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.total)
+            Total
         </dt>
 
         <dd>
@@ -27,24 +28,24 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.id_usuario)
+            Usuario
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.id_usuario)
+            @ProyectoAdsi.Controllers.CompraController.NombreUsuario(Model.id_usuario)
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.id_cliente)
+            Cliente
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.id_cliente)
+            @ProyectoAdsi.Controllers.CompraController.NombreCliente(Model.id_cliente)
         </dd>
 
     </dl>
 </div>
 <p>
     @Html.ActionLink("Editar", "Edit", new { id = Model.id }) |
-    @Html.ActionLink("Regresar", "Index")
+    @Html.ActionLink("Regresar ", "Index")
 </p>

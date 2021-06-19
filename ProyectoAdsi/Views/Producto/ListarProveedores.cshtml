@@ -1,11 +1,11 @@
 ﻿@model IEnumerable<ProyectoAdsi.Models.proveedor>
 
-<select class="form-control" id="id_Proveedor"name="id_proveedor">
+<select class="form-control" id="id_proveedor"name="id_proveedor">
     @foreach (var item in Model) 
 
     {
     
-                    <option value="@item.id">@item.nombre</option>
+     <option value="@item.id">@item.nombre</option>
 
 
     }

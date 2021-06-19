@@ -2,6 +2,7 @@
 
 @{
     ViewBag.Title = "Create";
+    Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
 <h2>Crear Nuevo</h2>
@@ -17,7 +18,7 @@
         <div class="form-group">
             @Html.LabelFor(model => model.idUsuario, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.idUsuario, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.Action("ListarUsuarioRol")
                 @Html.ValidationMessageFor(model => model.idUsuario, "", new { @class = "text-danger" })
             </div>
         </div>
@@ -25,7 +26,7 @@
         <div class="form-group">
             @Html.LabelFor(model => model.idRol, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.idRol, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.Action("ListarRoles")
                 @Html.ValidationMessageFor(model => model.idRol, "", new { @class = "text-danger" })
             </div>
         </div>

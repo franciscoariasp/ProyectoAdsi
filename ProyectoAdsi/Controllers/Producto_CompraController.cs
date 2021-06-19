@@ -20,25 +20,7 @@ namespace ProyectoAdsi.Controllers
         }
 
     }
-    public static string Product(int idProducto)
-    {
-        using (var db = new inventario2021Entities())
-        {
-            return db.producto.Find(idProducto).nombre;
-        }
-    }
-
-    public ActionResult ListarProductos()
-    {
-        using (var db = new inventario2021Entities())
-
-        {
-            return PartialView(db.producto.ToList());
-
-        }
-    }
-
-    public static int CompraProduct(int idCompra)
+    public static int NombreCompra(int idCompra)
     {
         using (var db = new inventario2021Entities())
         {
@@ -46,12 +28,30 @@ namespace ProyectoAdsi.Controllers
         }
     }
 
-    public ActionResult ListarCompras()
+    public ActionResult ListarCompra()
     {
         using (var db = new inventario2021Entities())
 
         {
             return PartialView(db.compra.ToList());
+
+        }
+    }
+
+    public static int NombreProducto(int idProducto)
+    {
+        using (var db = new inventario2021Entities())
+        {
+            return db.compra.Find(idProducto).id_cliente;
+        }
+    }
+
+    public ActionResult ListarProducto()
+    {
+        using (var db = new inventario2021Entities())
+
+        {
+            return PartialView(db.producto.ToList());
 
         }
     }
@@ -64,7 +64,7 @@ namespace ProyectoAdsi.Controllers
 
     [HttpPost]
     [ValidateAntiForgeryToken]
-    public ActionResult Create(producto_compra newProducto_Compra)
+    public ActionResult Create(producto_compra newProductoCompra)
     {
         if (!ModelState.IsValid)
             return View();
@@ -73,7 +73,7 @@ namespace ProyectoAdsi.Controllers
         {
             using (var db = new inventario2021Entities())
             {
-                db.producto_compra.Add(newProducto_Compra);
+                db.producto_compra.Add(newProductoCompra);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
@@ -91,8 +91,8 @@ namespace ProyectoAdsi.Controllers
         using (var db = new inventario2021Entities())
 
         {
-            producto_compra producto_compraDetalle = db.producto_compra.Where(a => a.id == id).FirstOrDefault();
-            return View(producto_compraDetalle);
+            producto_compra productocompraDetalle = db.producto_compra.Where(a => a.id == id).FirstOrDefault();
+            return View(productocompraDetalle);
         }
 
     }
@@ -102,8 +102,8 @@ namespace ProyectoAdsi.Controllers
 
         using (var db = new inventario2021Entities())
         {
-            var producto_compraDelete = db.producto_compra.Find(id);
-            db.producto_compra.Remove(producto_compraDelete);
+            var productocompraDelete = db.producto_compra.Find(id);
+            db.producto_compra.Remove(productocompraDelete);
             db.SaveChanges();
             return RedirectToAction("Index");
         }
@@ -119,8 +119,8 @@ namespace ProyectoAdsi.Controllers
             using (var db = new inventario2021Entities())
 
             {
-                producto_compra producto_Compra = db.producto_compra.Where(a => a.id == id).FirstOrDefault();
-                return View(producto_Compra);
+                producto_compra productoCompra = db.producto_compra.Where(a => a.id == id).FirstOrDefault();
+                return View(productoCompra);
             }
 
         }

@@ -2,15 +2,18 @@
 
 @{
     ViewBag.Title = "Create";
-    
+
+
 }
 
-<h2>Crear</h2>
+<h2>Nuevo Producto</h2>
+<p>En este formulario podra registrar un nuevo producto.</p>
 
-@using (Html.BeginForm()) 
+
+@using (Html.BeginForm())
 {
     @Html.AntiForgeryToken()
-    
+
     <div class="form-horizontal">
         <h4>Producto</h4>
         <hr />
