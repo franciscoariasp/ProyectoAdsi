@@ -6,18 +6,18 @@
 }
 
 <h2>Registrar Productos</h2>
-<p> En este formulario ingrese los productos comprados.</p>
+<p> *En este formulario ingrese los productos comprados.*</p>
 
 @using (Html.BeginForm())
 {
     @Html.AntiForgeryToken()
 
     <div class="form-horizontal">
-        <h4>producto_compra</h4>
+        <h4>Producto Compra</h4>
         <hr />
         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
         <div class="form-group">
-            <label class="control-label col-md-2" for="id_compra">Comprador</label>
+            <label class="control-label col-md-2" for="id_compra">Compra</label>
             <div class="col-md-10">
                 @Html.Action("ListarCompras")
                 @Html.ValidationMessageFor(model => model.id_compra, "", new { @class = "text-danger" })

@@ -117,7 +117,7 @@ namespace ProyectoAdsi.Controllers
         {
             using (var db = new inventario2021Entities())
             {
-               var usuario = db.usuario.Find(id);
+                var usuario = db.usuario.Find(id);
                 {
                     db.usuario.Remove(usuario);
                     db.SaveChanges();

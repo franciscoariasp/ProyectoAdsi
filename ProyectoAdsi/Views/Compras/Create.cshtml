@@ -5,14 +5,14 @@
 }
 
 <h2>Nueva Compra</h2>
-<p>En este formulario se registra nueva compra.</p>
+<p>*En este formulario se registra nueva compra.*</p>
 
 @using (Html.BeginForm())
 {
     @Html.AntiForgeryToken()
 
     <div class="form-horizontal">
-        <h4>compra</h4>
+        <h4>Compras</h4>
         <hr />
         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
         <div class="form-group">
