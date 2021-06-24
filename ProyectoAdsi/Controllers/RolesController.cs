@@ -76,7 +76,11 @@ namespace ProyectoAdsi.Controllers
             [ValidateAntiForgeryToken]
             public ActionResult Edit(roles rolesEdit)
             {
-                try
+            if (!ModelState.IsValid)
+
+                return View();
+
+            try
                 {
                     using (var db = new inventario2021Entities())
                     {

@@ -11,6 +11,7 @@ namespace ProyectoAdsi.Models
 {
     using System;
     using System.Collections.Generic;
+    using System.ComponentModel.DataAnnotations;
     
     public partial class usuario
     {
@@ -22,10 +23,17 @@ namespace ProyectoAdsi.Models
         }
     
         public int id { get; set; }
+
+        [Required(ErrorMessage ="Este campo no debe ir vacio")]
+        [StringLength(20,ErrorMessage ="Excedio el limte de caracteres")]
         public string nombre { get; set; }
         public string apellido { get; set; }
+        
         public System.DateTime fecha_nacimiento { get; set; }
+        [EmailAddress]
         public string email { get; set; }
+
+        
         public string password { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

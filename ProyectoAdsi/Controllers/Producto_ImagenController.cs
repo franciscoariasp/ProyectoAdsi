@@ -118,6 +118,10 @@ namespace ProyectoAdsi.Controllers
         public ActionResult Edit(producto_imagen productoImagenEdit)
 
         {
+            if (!ModelState.IsValid)
+
+                return View();
+
             try
 
             {

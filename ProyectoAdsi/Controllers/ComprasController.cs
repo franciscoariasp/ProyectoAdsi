@@ -134,7 +134,11 @@ namespace ProyectoAdsi.Controllers
     public ActionResult Edit(compra compraEdit)
 
     {
-        try
+            if (!ModelState.IsValid)
+
+                return View();
+
+            try
 
         {
 

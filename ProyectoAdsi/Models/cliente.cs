@@ -11,7 +11,8 @@ namespace ProyectoAdsi.Models
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.ComponentModel.DataAnnotations;
+
     public partial class cliente
     {
         internal string password;
@@ -23,6 +24,9 @@ namespace ProyectoAdsi.Models
         }
     
         public int id { get; set; }
+
+        [Required(ErrorMessage = "Este campo no debe ir vacio")]
+        [StringLength(20, ErrorMessage = "Excedio el limte de caracteres")]
         public string nombre { get; set; }
         public string documento { get; set; }
         public string email { get; set; }

@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using ProyectoAdsi.Models;
+using Rotativa;
 
 namespace ProyectoAdsi.Controllers
 {
@@ -111,6 +112,9 @@ namespace ProyectoAdsi.Controllers
 
         public ActionResult Edit(producto productoEdit)
         {
+            if (!ModelState.IsValid)
+
+                return View();
 
             try
             {
@@ -157,6 +161,11 @@ namespace ProyectoAdsi.Controllers
                 return View();
             }
 
+        }
+
+        public ActionResult ImprimirReporte()
+        {
+            return new ActionAsPdf("Reporte") { FileName = "reporte.pdf" };
         }
     }
 }

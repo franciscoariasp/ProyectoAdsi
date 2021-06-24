@@ -84,6 +84,8 @@ namespace ProyectoAdsi.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Edit(usuario usuarioEdit)
         {
+            if (!ModelState.IsValid)
+                return View();
             try 
             {
                 using (var db = new inventario2021Entities())         
@@ -126,6 +128,11 @@ namespace ProyectoAdsi.Controllers
                 
             }
          }
+
+        public ActionResult Test()
+        {
+            return View();
+        }
 
         public ActionResult Login(string message = "")
         {
