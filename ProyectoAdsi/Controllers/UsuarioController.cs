@@ -142,6 +142,7 @@ namespace ProyectoAdsi.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
+        
         public ActionResult Login(string email, string password)
         {
             string passEncrip = UsuarioController.HashSHA1(password);

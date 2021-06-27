@@ -7,7 +7,7 @@
     
 
 
-<h2>Login</h2>
+<h2>Ingrese al Sistema</h2>
 @{ 
     if(!string.IsNullOrEmpty(ViewBag.Message))
             {
@@ -20,16 +20,18 @@
       <form action="/Usuario/Login" method="post">
       @Html.AntiForgeryToken()
       <div class="form-goup">
-          <label class="control-label col-md-2">Email </label>
+          <label class="control-label col-md-2">Usuario </label>
           <div class="col-md-10">
-              <input type="email" name="email" class="form-control" />
+              <input type="email" name="email" class="form-control" placeholder="Email"/>
+              <br />
           </div>
       </div>
 
       <div class="form-goup">
-          <label class="control-label col-md-2">Password</label>
+          <label class="control-label col-md-2">Contraseña</label>
           <div class="col-md-10">
-              <input type="password" name="password" class="form-control" /> 
+              <input type="password" name="password" class="form-control" placeholder="Password" /> 
+              <br />
           </div>
       </div>
         

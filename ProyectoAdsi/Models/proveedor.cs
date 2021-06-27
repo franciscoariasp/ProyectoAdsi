@@ -25,7 +25,9 @@ namespace ProyectoAdsi.Models
         [Required(ErrorMessage = "Este campo no debe ir vacio")]
         [StringLength(20, ErrorMessage = "Excedio el limte de caracteres")]
         public string nombre { get; set; }
+        [Required(ErrorMessage = "Este espacio es obligatorio")]
         public string direccion { get; set; }
+        [Required(ErrorMessage = "Este espacio es obligatorio")]
         public string telefono { get; set; }
         public string nombre_contacto { get; set; }
     

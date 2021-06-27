@@ -28,7 +28,11 @@ namespace ProyectoAdsi.Models
         [Required(ErrorMessage = "Este campo no debe ir vacio")]
         [StringLength(20, ErrorMessage = "Excedio el limte de caracteres")]
         public string nombre { get; set; }
+
+        [Required(ErrorMessage = "Este espacio es obligatorio")]
         public string documento { get; set; }
+
+        [Required(ErrorMessage = "Este espacio es obligatorio")]
         public string email { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
