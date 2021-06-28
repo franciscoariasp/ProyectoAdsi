@@ -1,0 +1,36 @@
+﻿@model IEnumerable<ProyectoAdsi.Models.Reporte1>
+
+@{
+    ViewBag.Title = "Reporte1";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<p style="color:blue;"><h2>Reporte Compras</h2></p>
+
+<table class="table">
+    <tr>
+        
+        <th>Cliente</th>
+        <th>Documento Cliente</th>
+        <th>Correo Cliente</th>
+        <th>Fecha Compra</th>
+        <th>Total Compra</th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@Html.DisplayFor(modelItem => item.nombreCliente)</td>
+            <td>@Html.DisplayFor(modelItem => item.documentoCliente)</td>
+            <td>@Html.DisplayFor(modelItem => item.emailCliente)</td>
+            <td>@Html.DisplayFor(modelItem => item.fechaCompra)</td>
+            <td>@Html.DisplayFor(modelItem => item.totalCompra)</td>
+        </tr>
+    }
+
+
+</table>
+
+
+<p <h1 style="color:#00ff21">Realiza tus compras desde la comodidad de tu casa o trabajo con un solo click</h1></p>
+
+@Html.ActionLink("Generar Reporte1", "ImprimirReporte1", "Compras")

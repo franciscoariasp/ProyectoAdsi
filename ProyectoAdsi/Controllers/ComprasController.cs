@@ -167,19 +167,20 @@ namespace ProyectoAdsi.Controllers
 
     }
 
-        public ActionResult ReporteCompra()
+        public ActionResult Reporte1()
         {
             try
             {
                 var db = new inventario2021Entities();
                 var query = from tabCliente in db.cliente
-                            join tabCompra in db.compra on tabCliente.id equals tabCompra.id_cliente
-                            select new ReporteCompra
+                            join tabCompras in db.compra on tabCliente.id equals tabCompras.id_cliente
+                            select new Reporte1
                             {
                                 nombreCliente = tabCliente.nombre,
                                 documentoCliente = tabCliente.documento,
-                                fechaCompra = tabCompra.fecha,
-                                totalCompra = tabCompra.total
+                                emailCliente = tabCliente.email,
+                                fechaCompra = tabCompras.fecha,
+                                totalCompra = tabCompras.total
                             };
 
                 return View(query);
@@ -190,9 +191,9 @@ namespace ProyectoAdsi.Controllers
                 return View();
             }
         }
-        public ActionResult ImprimirReporteCompra()
+        public ActionResult ImprimirReporte1()
         {
-            return new ActionAsPdf("ReporteCompra") { FileName = "ReporteCompra.pdf" };
+            return new ActionAsPdf("Reporte1") { FileName = "Reporte1.pdf" };
         }
      }
 }

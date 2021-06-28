@@ -2,22 +2,21 @@
 <!DOCTYPE html>
 <html>
 <head>
+
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-            <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300&display=swap" rel="stylesheet">
+
     <title>@ViewBag.Title - Modelo Inventario</title>
-    
-
-        @Styles.Render("~/Content/css")
-        @Scripts.Render("~/bundles/modernizr")
-        <link rel="stylesheet" href="~/Content/custom.css">
-
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+    <link rel="stylesheet" href="~/Content/custom.css">
 </head>
 <body>
+    <h1 style="background-color:#000000;"></h1>
+
     <div class="navbar navbar-inverse navbar-fixed-top">
+
         <div clss="container">
             <div class="navbar-header">
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
@@ -26,55 +25,56 @@
                     <span class="icon-bar"></span>
                 </button>
                 @Html.ActionLink("Modelo Invenatrio", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+
             </div>
-            <div class="navbar-collapse collapse">
-                <ul class="nav navbar-nav">
-                    <li>@Html.ActionLink("Inicio", "Index", "Home")</li>
-                    <li>@Html.ActionLink("Sobre Mi", "About", "Home")</li>
-                    <li>@Html.ActionLink("Contacto", "Contact", "Home")</li>
-                    <li>@Html.ActionLink("Iniciar Sesion", "Login", "Usuario")</li>
-                    <li>@Html.ActionLink("Salir", "CloseSession", "Usuario")</li>
-                    @if (User.Identity.IsAuthenticated)
-                    {
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle active" data-toggle="dropdown" data-target="despegable" href="#">
+            <ul class="nav navbar-nav">
+                <li>@Html.ActionLink("Inicio", "Index", "Home")</li>
+                <li>@Html.ActionLink("Sobre Mi", "About", "Home")</li>
+                <li>@Html.ActionLink("Contacto", "Contact", "Home")</li>
+                <li>@Html.ActionLink("Iniciar Sesion", "Login", "Usuario")</li>
+                <li>@Html.ActionLink("Salir", "CloseSession", "Usuario")</li>
+                @if (User.Identity.IsAuthenticated)
 
-                                Menu Tablas
+                {
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle active" data-toggle="dropdown" data-target="despegable" href="#">
 
-                            </a>
-                            <div class="dropdown-menu">
+                            Menu Tablas
 
-                                <a class="dropdown-item" href="#">@Html.ActionLink("CRUD Usuario", "Index", "Usuario") </a>
-                                <br />
-                                <a class="dropdown-item" href="#">@Html.ActionLink("CRUD Cliente", "Index", "Cliente")  </a>
-                                <br />
-                                <a class="dropdown-item" href="#">@Html.ActionLink("CRUD Compra", "Index", "Compras")   </a>
-                                <br />
-                                <a class="dropdown-item" href="#">@Html.ActionLink("CRUD Proveedor", "Index", "Proveedor") </a>
-                                <br />
-                                <a class="dropdown-item" href="#">@Html.ActionLink("CRUD Producto", "Index", "Producto")  </a>
-                                <br />
-                                <a class="dropdown-item" href="#">@Html.ActionLink("CRUD Roles", "Index", "Roles")    </a>
-                                <br />
-                                <a class="dropdown-item" href="#">@Html.ActionLink("CRUD Producto Compra", "Index", "Producto_Compra")</a>
-                                <br />
-                                <a class="dropdown-item" href="#">@Html.ActionLink("CRUD Producto Imagen", "Index", "Producto_Imagen")</a>
-                                <br />
+                        </a>
+                        <div class="dropdown-menu">
+
+                            <a class="dropdown-item" href="#">@Html.ActionLink("CRUD Usuario", "Index", "Usuario") </a>
+                            <br />
+                            <a class="dropdown-item" href="#">@Html.ActionLink("CRUD Cliente", "Index", "Cliente")  </a>
+                            <br />
+                            <a class="dropdown-item" href="#">@Html.ActionLink("CRUD Compra", "Index", "Compras")   </a>
+                            <br />
+                            <a class="dropdown-item" href="#">@Html.ActionLink("CRUD Proveedor", "Index", "Proveedor") </a>
+                            <br />
+                            <a class="dropdown-item" href="#">@Html.ActionLink("CRUD Producto", "Index", "Producto")  </a>
+                            <br />
+                            <a class="dropdown-item" href="#">@Html.ActionLink("CRUD Roles", "Index", "Roles")    </a>
+                            <br />
+                            <a class="dropdown-item" href="#">@Html.ActionLink("CRUD Producto Compra", "Index", "Producto_Compra")</a>
+                            <br />
+                            <a class="dropdown-item" href="#">@Html.ActionLink("CRUD Producto Imagen", "Index", "Producto_Imagen")</a>
+                            <br />
 
 
-                            </div>
-                        </li>
+                        </div>
+                    </li>
 
-                    }
-                </ul>
-            </div>
+                }
+            </ul>
         </div>
+    </div>
     </div>
     <div class="container body-content">
         @RenderBody()
         <hr />
         <footer>
-            <p>&copy; @DateTime.Now.Year - Mi aplicación ASP.NET</p>
+            <p <h1 style="color:#ff0000;">&copy; @DateTime.Now.Year - Francisco Arias faarias13@misena.edu.co ASP.NET</p>
         </footer>
     </div>
 
@@ -83,3 +83,6 @@
     @RenderSection("scripts", required: false)
 </body>
 </html>
+<img src="https://www.fabio.com.ar/images/reviews22/iconDB.jpg" alt="Alternate Text" />
+<img src="https://miguelangellv.files.wordpress.com/2014/02/mariadb-vs-mysql.jpg" alt="Alternate Text" />
+<img src="https://blog.desdelinux.net/wp-content/uploads/2012/05/lamp.png.webp" alt="Alternate Text" />

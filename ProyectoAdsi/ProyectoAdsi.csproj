@@ -186,14 +186,13 @@
     <Compile Include="Controllers\Producto_ImagenController.cs" />
     <Compile Include="Controllers\Producto_CompraController.cs" />
     <Compile Include="Controllers\ProveedorController.cs" />
-    <Compile Include="Controllers\ReporteCompra.cs" />
     <Compile Include="Controllers\RolesController.cs" />
     <Compile Include="Controllers\UsuarioController.cs" />
     <Compile Include="Controllers\Usuario_RolController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Models\ReporteCompra.cs" />
+    <Compile Include="Models\Reporte.cs" />
     <Compile Include="Models\cliente.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
@@ -227,7 +226,7 @@
     <Compile Include="Models\proveedor.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\Reporte.cs" />
+    <Compile Include="Models\Reporte1.cs" />
     <Compile Include="Models\roles.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
@@ -354,7 +353,8 @@
     <Content Include="Views\Producto\Reporte.cshtml" />
     <Content Include="Views\Usuario\Test.cshtml" />
     <Content Include="Views\Proveedor\uploadCSV.cshtml" />
-    <Content Include="Views\Compras\ReporteCompra.cshtml" />
+    <Content Include="Views\Compras\Reporte1.cshtml" />
+    <Content Include="Views\Cliente\uploadCSV.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
