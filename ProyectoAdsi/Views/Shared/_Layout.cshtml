@@ -6,75 +6,85 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
     <title>@ViewBag.Title - Modelo Inventario</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dosis:wght@300&display=swap" rel="stylesheet">
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
     <link rel="stylesheet" href="~/Content/custom.css">
 </head>
 <body>
-    <h1 style="background-color:#000000;"></h1>
+       <div class="navbar navbar-inverse navbar-fixed-top">
+           <div clss="container">
+               <div class="navbar-header">
+                   <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                       <span class="icon-bar"></span>
+                       <span class="icon-bar"></span>
+                       <span class="icon-bar"></span>
+                   </button>
+                   @Html.ActionLink("Modelo Invenatrio", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+               </div>
+               <div class="navbar-collapse collapse">
+                   <ul class="nav navbar-nav">
+                       @if (!User.Identity.IsAuthenticated)
+                       {
+                           <li>@Html.ActionLink("Inicio", "Index", "Home")</li>
+                           <li>@Html.ActionLink("Sobre Mi", "About", "Home")</li>
+                           <li>@Html.ActionLink("Contacto", "Contact", "Home")</li>
+                           <li>@Html.ActionLink("Iniciar Sesion", "Login", "Usuario")</li>
 
-    <div class="navbar navbar-inverse navbar-fixed-top">
+                       }
 
-        <div clss="container">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                @Html.ActionLink("Modelo Invenatrio", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+                       @if (User.Identity.IsAuthenticated)
+                       {
+                           <li class="dropdown">
+                               <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Menú Tablas <span class="glyphicon glyphicon-folder-open"></span></a>
+                               <ul class="dropdown-menu">
+                                   <li><a class="dropdown-item" href="#">@Html.ActionLink("CRUD Usuario", "Index", "Usuario") </a></li>
+                                   <li><a class="dropdown-item" href="#">@Html.ActionLink("CRUD Cliente", "Index", "Cliente") </a></li>
+                                   <li><a class="dropdown-item" href="#">@Html.ActionLink("CRUD Compra", "Index", "Compras")   </a></li>
+                                   <li><a class="dropdown-item" href="#">@Html.ActionLink("CRUD Proveedor", "Index", "Proveedor") </a></li>
+                                   <li><a class="dropdown-item" href="#">@Html.ActionLink("CRUD Producto", "Index", "Producto")  </a></li>
+                                   <li><a class="dropdown-item" href="#">@Html.ActionLink("CRUD Roles", "Index", "Roles")    </a></li>
+                                   <li><a class="dropdown-item" href="#">@Html.ActionLink("CRUD Usuario Rol", "Index", "Usuario_Rol") </a></li>
+                                   <li><a class="dropdown-item" href="#">@Html.ActionLink("CRUD Producto Compra", "Index", "Producto_Compra")</a></li>
+                                   <li><a class="dropdown-item" href="#">@Html.ActionLink("CRUD Producto Imagen", "Index", "Producto_Imagen")</a></li>
 
-            </div>
-            <ul class="nav navbar-nav">
-                <li>@Html.ActionLink("Inicio", "Index", "Home")</li>
-                <li>@Html.ActionLink("Sobre Mi", "About", "Home")</li>
-                <li>@Html.ActionLink("Contacto", "Contact", "Home")</li>
-                <li>@Html.ActionLink("Iniciar Sesion", "Login", "Usuario")</li>
-                <li>@Html.ActionLink("Salir", "CloseSession", "Usuario")</li>
-                @if (User.Identity.IsAuthenticated)
+                               </ul>
+                               </li>
+                           <li class="dropdown">
+                               <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Cargar Archivos <span class="glyphicon glyphicon-folder-open"></span></a>
+                               <ul class="dropdown-menu">
+                                   <li><a href="#">@Html.ActionLink("Carga Cliente", "uploadCSV", "Cliente") </a></li>
+                                   <li><a href="#">@Html.ActionLink("Carga Proveedor", "uploadCSV", "Proveedor") </a></li>
+                               </ul>
+                           </li>
 
-                {
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle active" data-toggle="dropdown" data-target="despegable" href="#">
+                           <li class="dropdown">
+                               <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Generar Reportes <span class="glyphicon glyphicon-folder-open"></span></a>
+                               <ul class="dropdown-menu">
+                                   <li><a href="#">@Html.ActionLink("Reporte Compra", "Reporte1", "Compras") </a></li>
+                                   <li><a href="#">@Html.ActionLink("Reporte Proveedor", "Reporte", "Producto") </a></li>
 
-                            Menu Tablas
+                               </ul>
+                           </li>
 
-                        </a>
-                        <div class="dropdown-menu">
+                           <li>@Html.ActionLink("Cerrar Cesion", "CloseSession", "Usuario")</li>
+                           }
+                           
 
-                            <a class="dropdown-item" href="#">@Html.ActionLink("CRUD Usuario", "Index", "Usuario") </a>
-                            <br />
-                            <a class="dropdown-item" href="#">@Html.ActionLink("CRUD Cliente", "Index", "Cliente")  </a>
-                            <br />
-                            <a class="dropdown-item" href="#">@Html.ActionLink("CRUD Compra", "Index", "Compras")   </a>
-                            <br />
-                            <a class="dropdown-item" href="#">@Html.ActionLink("CRUD Proveedor", "Index", "Proveedor") </a>
-                            <br />
-                            <a class="dropdown-item" href="#">@Html.ActionLink("CRUD Producto", "Index", "Producto")  </a>
-                            <br />
-                            <a class="dropdown-item" href="#">@Html.ActionLink("CRUD Roles", "Index", "Roles")    </a>
-                            <br />
-                            <a class="dropdown-item" href="#">@Html.ActionLink("CRUD Producto Compra", "Index", "Producto_Compra")</a>
-                            <br />
-                            <a class="dropdown-item" href="#">@Html.ActionLink("CRUD Producto Imagen", "Index", "Producto_Imagen")</a>
-                            <br />
-
-
-                        </div>
-                    </li>
-
-                }
-            </ul>
-        </div>
+                       </ul>
+               </div>
+           </div>
     </div>
-    </div>
-    <div class="container body-content">
+      <div class="container body-content">
         @RenderBody()
         <hr />
         <footer>
-            <p <h1 style="color:#ff0000;">&copy; @DateTime.Now.Year - Francisco Arias faarias13@misena.edu.co ASP.NET</p>
+
+            <p <h1 style="color:#000000;">&copy; @DateTime.Now.Year - Francisco Arias faarias13@misena.edu.co ASP.NET</p>
+            <p <h1 style="color: #000000;">&copy; @DateTime.Now.Year - Sebastian Correa scorrea771@misena.edu.co ASP.NET</p>
         </footer>
     </div>
 
